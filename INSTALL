@@ -1,0 +1,9 @@
+install deps:
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
+yum install re2c
+
+build:
+./configure.py --bootstrap
+
+edit ~/.bash_profile:
+PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/GITs/tsa/ninja
