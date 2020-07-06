@@ -1,8 +1,12 @@
 install deps:
 wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo
 yum install re2c
+yum install centos-release-scl
+yum-config-manager --enable rhel-server-rhscl-7-rpms
+yum install devtoolset-7
 
 build:
+scl enable devtoolset-7 bash 
 ./configure.py --bootstrap
 
 edit ~/.bash_profile:
