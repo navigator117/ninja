@@ -301,7 +301,7 @@ else:
     n.variable('ar', configure_env.get('AR', 'ar'))
 
 if platform.is_msvc():
-    cflags = ['/showIncludes',
+    cflags = [# '/showIncludes',
               '/nologo',  # Don't print startup banner.
               '/Zi',  # Create pdb with debug info.
               '/W4',  # Highest warning level.
@@ -508,7 +508,7 @@ for name in ['build',
              'string_piece_util',
              'util',
              'version']:
-    objs += cxx(name, variables=cxxvariables) 
+    objs += cxx(name, variables=cxxvariables)
 if platform.is_windows():
     for name in ['subprocess-win32',
                  'includes_normalize-win32',
